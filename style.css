@@ -1,4 +1,4 @@
-/* ========== GLOBAL ========== */
+/* GLOBAL  */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -11,7 +11,7 @@ a {
     color: inherit;
 }
 
-/* ========== NAVBAR ========== */
+/* NAVBAR  */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -46,7 +46,7 @@ a {
     color: #05d9e8;
 }
 
-/* ========== HERO SECTION ========== */
+/* HERO SECTION  */
 .hero {
     height: 100vh;
     display: flex;
@@ -92,7 +92,7 @@ a {
     background: #03b4be;
 }
 
-/* ========== PODSTRONY OGÓLNE ========== */
+/* PODSTRONY OGÓLNE  */
 .page {
     max-width: 900px;
     margin: 100px auto;
@@ -119,7 +119,7 @@ a {
     color: #05d9e8;
 }
 
-/* ========== FORMULARZ KONTAKTOWY ========== */
+/*  FORMULARZ KONTAKTOWY  */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -140,9 +140,9 @@ a {
 #message {
     width: 100%;
     padding: 14px;
-    background: #0c0c0c;       /* tło jak strona */
-    color: #b200ff;             /* neonowy fiolet */
-    border: 2px solid #1f1f1f;  /* domyślny border */
+    background: #0c0c0c;      
+    color: #b200ff;             
+    border: 2px solid #1f1f1f;  
     border-radius: 8px;
     font-size: 1rem;
     transition: all 0.3s;
@@ -163,12 +163,12 @@ a {
 
 /* Efekty walidacji */
 .input-ok {
-    border-color: #00ff7f !important;          /* neonowa zieleń */
+    border-color: #00ff7f !important;          
     box-shadow: 0 0 10px #00ff7f80, 0 0 20px #00ff7f50;
 }
 
 .input-error {
-    border-color: #ff0033 !important;          /* neonowa czerwień */
+    border-color: #ff0033 !important;          
     box-shadow: 0 0 10px #ff0033aa, 0 0 20px #ff003380;
 }
 
