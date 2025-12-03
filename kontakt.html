@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Kacper Jaróg</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Wizytówka</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Strona główna</a></li>
+        <li><a href="wyksztalcenie.html">Wykształcenie</a></li>
+        <li><a href="doswiadczenie.html">Doświadczenie</a></li>
+        <li><a href="zainteresowania.html">Zainteresowania</a></li>
+    </ul>
+</nav>
+
+<section class="page">
+    <h1 class="page-title">Kontakt</h1>
+
+    <div class="card">
+        <h2>Dane kontaktowe</h2>
+        <p><strong>Imię i nazwisko:</strong> Kacper Jaróg</p>
+        <p><strong>E-mail:</strong> kacperjarog@gmail.com</p>
+        <p><strong>Telefon:</strong> 451 013 301</p>
+    </div>
+
+    <div class="card">
+        <h2>Napisz do mnie</h2>
+
+        <form id="contactForm" novalidate>
+
+            <!-- IMIĘ -->
+            <div class="form-group">
+                <label for="name">Imię i nazwisko</label>
+                <input type="text" id="name" class="dark-input" placeholder="Wpisz swoje imię...">
+                <p class="error-text" id="nameError"></p>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="dark-input" placeholder="adres@przyklad.pl">
+                <p class="error-text" id="emailError"></p>
+            </div>
+
+            <!-- WIADOMOŚĆ -->
+            <div class="form-group">
+                <label for="message">Wiadomość</label>
+                <textarea id="message" class="dark-input" placeholder="Twoja wiadomość..."></textarea>
+                <p class="error-text" id="messageError"></p>
+            </div>
+
+            <button type="submit" class="btn-send">Wyślij</button>
+
+            <p class="success-text" id="successMessage"></p>
+
+        </form>
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
