@@ -73,3 +73,43 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+// CYBERPUNK PIXEL TRANSITION
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", e => {
+        const href = link.getAttribute("href");
+
+        if (!href || href.startsWith("http")) return;
+
+        e.preventDefault();
+
+        const transition = document.querySelector(".page-transition");
+        const bar = document.querySelector(".progress-bar");
+        const text = document.querySelector(".progress-text");
+
+        transition.classList.add("active");
+
+        let progress = 0;
+        bar.style.width = "0%";
+        text.textContent = "0%";
+
+        setTimeout(() => {
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 12) + 6;
+
+                if (progress >= 100) {
+                    progress = 100;
+                    bar.style.width = "100%";
+                    text.textContent = "100%";
+                    clearInterval(interval);
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500);
+                } else {
+                    bar.style.width = progress + "%";
+                    text.textContent = progress + "%";
+                }
+            }, 120);
+        }, 700); // start po rozpadzie pixeli
+    });
+});

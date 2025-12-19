@@ -215,3 +215,226 @@ a {
     background: #d100ff;
     box-shadow: 0 0 15px #d100ff70, 0 0 30px #d100ff40;
 }
+
+/* Animacja <33*/
+.intro {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: introFadeOut 1s ease forwards;
+    animation-delay: 3s;
+}
+.intro-content {
+    text-align: center;
+    color: #05d9e8;
+    font-family: 'Segoe UI', sans-serif;
+    animation: glitchIn 1.5s ease forwards;
+}
+
+.intro-content h1 {
+    font-size: 4rem;
+    letter-spacing: 6px;
+}
+
+.intro-content p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+
+.scanline {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #05d9e8,
+        transparent
+    );
+    animation: scan 2s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes scan {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}
+
+@keyframes glitchIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes introFadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.hero-content {
+    animation: heroReveal 1.2s ease forwards;
+    animation-delay: 3.2s;
+    opacity: 0;
+}
+
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.page-transition {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+}
+.error-box {
+    text-align: center;
+    color: #ff0033;
+    animation: glitchRed 0.2s infinite;
+}
+
+.error-box h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+}
+
+.error-box p {
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+.progress-container {
+    width: 400px;
+    height: 14px;
+    border: 2px solid #ff0033;
+    margin: 0 auto 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #ff0033;
+    transition: width 0.1s linear;
+}
+
+.progress-text {
+    font-size: 1.1rem;
+}
+@keyframes glitchRed {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-1px, 1px); }
+    80% { transform: translate(1px, -1px); }
+    100% { transform: translate(0); }
+}
+
+.page-transition.active {
+    opacity: 1;
+    pointer-events: all;
+    animation: fadeInRed 0.3s ease forwards;
+}
+
+@keyframes fadeInRed {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.pixel-layer {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(#ff0033 1px, transparent 1px),
+        linear-gradient(90deg, #ff0033 1px, transparent 1px);
+    background-size: 8px 8px;
+    opacity: 0;
+    transform: scale(1);
+    animation: none;
+}
+.page-transition.active {
+    opacity: 1;
+    pointer-events: all;
+}
+.page-transition.active .pixel-layer {
+    opacity: 1;
+    animation: pixelBreak 0.8s steps(8) forwards;
+}
+@keyframes pixelBreak {
+    0% {
+        transform: scale(1);
+        filter: blur(0);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1.4);
+        filter: blur(6px);
+        opacity: 1;
+    }
+}
+.error-box {
+    text-align: center;
+    color: #ff0033;
+    opacity: 0;
+    animation: glitchRed 0.2s infinite;
+}
+
+.page-transition.active .error-box {
+    animation:
+        glitchRed 0.2s infinite,
+        crashIn 0.3s ease forwards;
+    animation-delay: 0.7s;
+}
+@keyframes crashIn {
+    from {
+        opacity: 0;
+        transform: scale(1.4);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.progress-container {
+    width: 420px;
+    height: 14px;
+    border: 2px solid #ff0033;
+    margin: 20px auto 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(
+        90deg,
+        #ff0033,
+        #ff6699,
+        #ff0033
+    );
+    transition: width 0.12s steps(6);
+}
